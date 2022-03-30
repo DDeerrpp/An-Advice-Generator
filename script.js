@@ -19,7 +19,6 @@ function rollForAdvice() {
         
     });
 }
-rollForAdvice();
 
 rollBtn.addEventListener('mouseover', () => {
     var dice = document.querySelector("#dice img");
