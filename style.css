@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+* {
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color-one: hsl(193, 38%, 86%);
+    --primary-color-two: hsl(150, 100%, 66%);
+
+    --neutral-color-one: hsl(217, 19%, 38%);
+    --neutral-color-two: hsl(217, 19%, 24%);
+    --neutral-color-three: hsl(218, 23%, 16%);
+}
+
+html,body {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    background-color: var(--neutral-color-three);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    position: absolute;
+    height: auto;
+    width: 40vw;
+    max-width: 1440px;
+    background-color: var(--neutral-color-two);
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: color-rotate infinte linear 3s;
+}
+
+@keyframes color-rotate {
+    from{
+        background-color: var(--neutral-color-two);
+    }
+    to {
+        background-color: var(--neutral-color-one);
+    }
+}
+
+.advice-num {
+    color: var(--primary-color-two);
+    letter-spacing: 2px;
+    margin: 20px 0 20px;
+}
+
+.advice {
+    font-size: 28px;
+    color: var(--primary-color-one);
+    text-align: center;
+}
+
+.seperator {
+    width: 100%;
+    margin: 50px 0 30px;
+}
+
+button {
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: 75px;
+    height: 75px;
+    background-color: var(--primary-color-two);
+    bottom: 0px;
+    transform: translateY(50%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out .3s;
+    user-select: none;
+}
+
+.img-rotate {
+    animation: rotate 1s ease-in-out;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+button img {
+    pointer-events: none;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .main {
+        width: 70vw;
+        max-width: 400px;
+        padding: none;
+        
+    }
+    .advice-num {
+        font-size: 10px;
+        margin: 5px 0 15px;
+    }
+    .advice {
+        font-size: 15px;
+    }
+    .seperator {
+        margin: 30px 0 10px;
+    }
+    button {
+        width: 50px;
+        height: 50px;
+        bottom: 0px;
+        transform: translateY(50%);
+    }
+    button img {
+        
+        pointer-events: none;
+    }
+}
