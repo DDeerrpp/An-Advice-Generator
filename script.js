@@ -27,3 +27,5 @@ rollBtn.addEventListener('mouseover', () => {
         dice.classList.remove("img-rotate");
     }, 1000);
 })
+
+rollForAdvice();
