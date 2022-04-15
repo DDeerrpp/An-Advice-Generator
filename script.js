@@ -1,22 +1,14 @@
 const rollBtn = document.getElementById("dice");
-var num = 1;
 rollBtn.addEventListener('click', () => {
     rollForAdvice();
 })
 
 function rollForAdvice() {
-    fetch('https://api.adviceslip.com/advice')
+    fetch(`https://api.adviceslip.com/advice/${Math.floor(Math.random() * (224 - 1) + 1)}`)
     .then(res => res.json())
     .then((data) =>  {
-        
-        if(num == data.slip.id) {
-            rollForAdvice();
-        } else {
-            document.getElementById("advice").innerText = `"${data.slip.advice}"`;
-            document.getElementById("advice-id").innerText = `ADVICE #${data.slip.id}`;
-            num = data.slip.id;
-        }
-        
+        document.getElementById("advice").innerText = `"${data.slip.advice}"`;
+        document.getElementById("advice-id").innerText = `ADVICE #${data.slip.id}`;
     });
 }
 
